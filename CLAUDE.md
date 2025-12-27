@@ -114,3 +114,9 @@ Use [@vueuse/core](https://vueuse.org/) utilities whenever applicable. Prefer Vu
 - `useEventListener`, `onClickOutside` - Event handling
 - `useDebounceFn`, `useThrottleFn` - Function utilities
 - `useVModel` - Two-way binding helpers
+
+## Git Commits
+
+When creating commits, use clean commit messages without the Claude Code footer. Do not include:
+- The "🤖 Generated with Claude Code" line
+- The "Co-Authored-By: Claude" line
