@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.3",
+    "oxfmt": "^0.24.0",
+    "oxlint": "^1.39.0",
     "vite": "npm:rolldown-vite@latest",
     "vite-plugin-vue-devtools": "^8.0.5"
   }
