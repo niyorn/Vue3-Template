@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt --write .",
+    "format-and-lint": "oxfmt --write . && oxlint"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -24,5 +25,8 @@
     "oxlint": "^1.39.0",
     "vite": "npm:rolldown-vite@latest",
     "vite-plugin-vue-devtools": "^8.0.5"
+  },
+  "engines": {
+    "node": ">=22.18.0"
   }
 }

@@ -8,7 +8,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev      # Start development server with hot-reload
 npm run build    # Production build
 npm run preview  # Preview production build locally
+npm run lint     # Run oxlint to check for issues
+npm run lint:fix # Run oxlint and auto-fix issues
+npm run format   # Format code with oxfmt
+npm run format-and-lint  # Format then lint
 ```
+
+## Linting & Formatting
+
+This project uses `oxlint` for linting and `oxfmt` for code formatting (both from the Oxc toolchain).
+
+- `oxlint` - Fast JavaScript/TypeScript linter
+- `oxfmt` - Fast code formatter
 
 ## Styling Guidelines
 
