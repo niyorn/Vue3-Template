@@ -25,6 +25,27 @@ This project uses `oxlint` for linting and `oxfmt` for code formatting (both fro
 
 All styling uses **Tailwind CSS 4** utility classes. Follow these principles:
 
+### Inline Tailwind Over Scoped Styles
+
+Prefer inline Tailwind utility classes over Vue 3 `<style scoped>` blocks whenever possible:
+
+```html
+<!-- Preferred: Inline Tailwind classes -->
+<button class="bg-primary hover:bg-primary/80 rounded-lg px-4 py-2 text-white">Submit</button>
+
+<!-- Avoid: Scoped styles -->
+<style scoped>
+  .submit-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 0.5rem;
+  }
+</style>
+```
+
+This keeps styles co-located with markup, improves consistency, and leverages Tailwind's design system.
+
 ### Mobile-First Approach
 
 Always style for mobile first, then add responsive modifiers for larger screens:
