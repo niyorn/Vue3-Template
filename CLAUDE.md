@@ -152,6 +152,28 @@ Follow the [official Vue.js Style Guide](https://vuejs.org/style-guide/). Key ru
 - Use **PascalCase** for filenames: `MyComponent.vue`
 - Prefix base/presentational components: `BaseButton.vue`, `BaseIcon.vue`
 
+### Reusable Components
+
+Focus on creating reusable, composable components. Always explicitly import components where they are used:
+
+```vue
+<script setup>
+import BaseButton from '@/components/BaseButton.vue'
+import UserCard from '@/components/UserCard.vue'
+</script>
+
+<template>
+  <UserCard>
+    <BaseButton>Click me</BaseButton>
+  </UserCard>
+</template>
+```
+
+- Design components to be generic and reusable across different contexts
+- Avoid hardcoding data or logic that could be passed as props
+- Use slots for flexible content composition
+- Do not rely on global component registration
+
 ### Props
 
 Always define props with types and validation:
