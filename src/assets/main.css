@@ -1,2 +1,22 @@
 /* /src/assets/main.css */
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-secondary: #6b7280;
+  --color-secondary-hover: #4b5563;
+  --color-accent: #10b981;
+  --color-accent-hover: #059669;
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  --color-background: #ffffff;
+  --color-surface: #f9fafb;
+  --color-border: #e5e7eb;
+
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+}
