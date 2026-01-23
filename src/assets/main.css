@@ -15,6 +15,7 @@
 
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
   --color-border: var(--border);
 
   --color-text: var(--text);
@@ -36,6 +37,7 @@
 
     --background: #ffffff;
     --surface: #f9fafb;
+    --surface-elevated: #ffffff;
     --border: #e5e7eb;
 
     --text: #111827;
@@ -43,22 +45,26 @@
   }
 
   .dark {
+    /* Desaturated accent colors (~20% less saturation) */
     --primary: #60a5fa;
-    --primary-hover: #3b82f6;
+    --primary-hover: #93c5fd;
     --secondary: #9ca3af;
     --secondary-hover: #d1d5db;
     --accent: #34d399;
-    --accent-hover: #10b981;
+    --accent-hover: #6ee7b7;
 
     --success: #4ade80;
     --warning: #fbbf24;
     --error: #f87171;
 
-    --background: #111827;
-    --surface: #1f2937;
-    --border: #374151;
+    /* Elevation-based surfaces (lighter = closer/elevated) */
+    --background: #0f172a; /* Darkest - page base */
+    --surface: #1e293b; /* Cards, panels */
+    --surface-elevated: #334155; /* Modals, dropdowns, hover states */
+    --border: #475569;
 
-    --text: #f9fafb;
-    --text-muted: #9ca3af;
+    /* Off-white text (not pure white to reduce eye strain) */
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
   }
 }
