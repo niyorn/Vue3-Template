@@ -228,6 +228,65 @@ Use shorthands consistently: `:value`, `@click`, `#header`
 
 Always use `:key` with `v-for`. Never combine `v-if` with `v-for` on the same element.
 
+### Custom Composables
+
+Extract reusable logic into composables in a `/composables` directory:
+
+```js
+// composables/useModal.js
+import { ref } from 'vue'
+
+export function useModal() {
+  const isOpen = ref(false)
+  const open = () => (isOpen.value = true)
+  const close = () => (isOpen.value = false)
+  const toggle = () => (isOpen.value = !isOpen.value)
+  return { isOpen, open, close, toggle }
+}
+```
+
+Usage in components:
+
+```vue
+<script setup>
+import { useModal } from '@/composables/useModal'
+
+const { isOpen, open, close } = useModal()
+</script>
+```
+
+### Scoped Slots
+
+Use scoped slots for data-driven, reusable components that let the parent control rendering:
+
+```vue
+<!-- DataList.vue -->
+<template>
+  <ul>
+    <li
+      v-for="item in items"
+      :key="item.id"
+    >
+      <slot
+        name="item"
+        :item="item"
+      />
+    </li>
+  </ul>
+</template>
+```
+
+```vue
+<!-- Usage -->
+<DataList :items="users">
+  <template #item="{ item }">
+    <span>{{ item.name }}</span>
+  </template>
+</DataList>
+```
+
+This pattern keeps the component logic generic while giving consumers full control over presentation.
+
 ## VueUse
 
 Use [@vueuse/core](https://vueuse.org/) utilities whenever applicable. Prefer VueUse composables over custom implementations for common patterns:
