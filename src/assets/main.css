@@ -1,22 +1,64 @@
 /* /src/assets/main.css */
 @import 'tailwindcss';
 
-@theme {
-  --color-primary: #3b82f6;
-  --color-primary-hover: #2563eb;
-  --color-secondary: #6b7280;
-  --color-secondary-hover: #4b5563;
-  --color-accent: #10b981;
-  --color-accent-hover: #059669;
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
 
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
 
-  --color-background: #ffffff;
-  --color-surface: #f9fafb;
-  --color-border: #e5e7eb;
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
 
-  --color-text: #111827;
-  --color-text-muted: #6b7280;
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+}
+
+@layer base {
+  :root {
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --secondary: #6b7280;
+    --secondary-hover: #4b5563;
+    --accent: #10b981;
+    --accent-hover: #059669;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+
+    --background: #ffffff;
+    --surface: #f9fafb;
+    --border: #e5e7eb;
+
+    --text: #111827;
+    --text-muted: #6b7280;
+  }
+
+  .dark {
+    --primary: #60a5fa;
+    --primary-hover: #3b82f6;
+    --secondary: #9ca3af;
+    --secondary-hover: #d1d5db;
+    --accent: #34d399;
+    --accent-hover: #10b981;
+
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --error: #f87171;
+
+    --background: #111827;
+    --surface: #1f2937;
+    --border: #374151;
+
+    --text: #f9fafb;
+    --text-muted: #9ca3af;
+  }
 }
