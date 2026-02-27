@@ -16,6 +16,7 @@
     "newlinesBetween": true
   },
   "sortTailwindcss": {
+    "stylesheet": "./src/assets/main.css",
     "attributes": [":class"]
   },
   "ignorePatterns": ["dist", "node_modules"]
