@@ -1,34 +1,29 @@
-<script setup>
+<script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
 import { ref, watch } from 'vue'
 
-const props = defineProps({
-  isOpen: {
-    type: Boolean,
-    required: true,
-  },
-  title: {
-    type: String,
-    default: '',
-  },
-  size: {
-    type: String,
-    default: 'md',
-    validator: (value) => ['sm', 'md', 'lg', 'xl', 'full'].includes(value),
-  },
-  closeOnClickOutside: {
-    type: Boolean,
-    default: true,
-  },
+type ModalSize = 'sm' | 'md' | 'lg' | 'xl' | 'full'
+
+interface Props {
+  isOpen: boolean
+  title?: string
+  size?: ModalSize
+  closeOnClickOutside?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  title: '',
+  size: 'md',
+  closeOnClickOutside: true,
 })
 
-const emit = defineEmits({
-  close: null,
-})
+const emit = defineEmits<{
+  close: []
+}>()
 
-const modalRef = ref(null)
+const modalRef = ref<HTMLElement | null>(null)
 
-const sizeClasses = {
+const sizeClasses: Record<ModalSize, string> = {
   sm: 'max-w-sm',
   md: 'max-w-md',
   lg: 'max-w-lg',

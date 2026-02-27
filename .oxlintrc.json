@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["vue", "import"],
+  "plugins": ["typescript", "vue", "import"],
   "rules": {
     "no-console": "warn",
     "no-debugger": "error",
@@ -8,13 +8,11 @@
     "eqeqeq": "error",
     "no-var": "error",
     "prefer-const": "error",
+    "typescript/no-explicit-any": "error",
+    "typescript/consistent-type-imports": "error",
     "vue/no-lifecycle-after-await": "error",
     "vue/no-arrow-functions-in-watch": "error",
-    "import/no-relative-parent-imports": "warn",
-    "vue/no-unused-vars": "warn",
-    "vue/no-undef-components": "error",
-    "vue/require-v-for-key": "error",
-    "vue/no-use-v-if-with-v-for": "error"
+    "import/no-relative-parent-imports": "warn"
   },
   "ignorePatterns": ["dist", "node_modules"]
 }

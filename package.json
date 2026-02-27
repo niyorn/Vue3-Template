@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit && vite build",
+    "type-check": "vue-tsc --noEmit",
     "preview": "vite preview",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
@@ -20,11 +21,14 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
+    "@types/node": "^25.3.2",
     "@vitejs/plugin-vue": "^6.0.3",
     "oxfmt": "^0.35.0",
     "oxlint": "^1.50.0",
+    "typescript": "^5.9.3",
     "vite": "npm:rolldown-vite@latest",
-    "vite-plugin-vue-devtools": "^8.0.5"
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vue-tsc": "^3.2.5"
   },
   "engines": {
     "node": ">=22.18.0"

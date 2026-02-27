@@ -1,20 +1,24 @@
 import { onKeyStroke } from '@vueuse/core'
 import { ref } from 'vue'
 
-export function useModal(options = {}) {
+interface UseModalOptions {
+  closeOnEscape?: boolean
+}
+
+export function useModal(options: UseModalOptions = {}) {
   const { closeOnEscape = true } = options
 
   const isOpen = ref(false)
 
-  const open = () => {
+  const open = (): void => {
     isOpen.value = true
   }
 
-  const close = () => {
+  const close = (): void => {
     isOpen.value = false
   }
 
-  const toggle = () => {
+  const toggle = (): void => {
     isOpen.value = !isOpen.value
   }
 
