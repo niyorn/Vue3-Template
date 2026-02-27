@@ -13,4 +13,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('vue-router') || id.includes('/vue/')) return 'vue-vendor'
+          if (id.includes('@vueuse')) return 'vueuse'
+        },
+      },
+    },
+  },
 })
