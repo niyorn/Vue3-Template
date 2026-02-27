@@ -6,7 +6,10 @@
     "no-unused-vars": "warn",
     "eqeqeq": "error",
     "no-var": "error",
-    "prefer-const": "warn"
+    "prefer-const": "error",
+    "vue/no-lifecycle-after-await": "error",
+    "vue/no-arrow-functions-in-watch": "error",
+    "import/no-relative-parent-imports": "warn"
   },
   "ignorePatterns": ["dist", "node_modules"]
 }

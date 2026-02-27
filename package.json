@@ -16,13 +16,13 @@
     "@tailwindcss/vite": "^4.1.18",
     "@vueuse/core": "^14.1.0",
     "tailwindcss": "^4.1.18",
-    "vue": "^3.5.26",
+    "vue": "^3.5.29",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.3",
-    "oxfmt": "^0.24.0",
-    "oxlint": "^1.39.0",
+    "oxfmt": "^0.35.0",
+    "oxlint": "^1.50.0",
     "vite": "npm:rolldown-vite@latest",
     "vite-plugin-vue-devtools": "^8.0.5"
   },

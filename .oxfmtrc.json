@@ -11,12 +11,12 @@
   "arrowParens": "always",
   "singleAttributePerLine": true,
   "endOfLine": "lf",
-  "experimentalSortImports": {
+  "sortImports": {
     "order": "asc",
     "newlinesBetween": true
   },
-  "experimentalTailwindcss": {
-    "attributes": ["class", "className"]
+  "sortTailwindcss": {
+    "attributes": [":class"]
   },
   "ignorePatterns": ["dist", "node_modules"]
 }
