@@ -142,6 +142,30 @@ When semantic theme colors are defined in the project's CSS using `@theme`, pref
 }
 ```
 
+## TypeScript
+
+This project uses TypeScript. All new files must be `.ts` and all Vue script blocks must use `lang="ts"`:
+
+```vue
+<script setup lang="ts">
+// typed code here
+</script>
+```
+
+Prefer type-based `defineProps` and `defineEmits` over runtime declarations:
+
+```ts
+interface Props {
+  label: string
+  count?: number
+}
+
+const props = withDefaults(defineProps<Props>(), { count: 0 })
+const emit = defineEmits<{ change: [value: number] }>()
+```
+
+Run `npm run type-check` to validate types across the project.
+
 ## Vue 3 Code Style
 
 Follow the [official Vue.js Style Guide](https://vuejs.org/style-guide/). Key rules:
@@ -178,14 +202,14 @@ import UserCard from '@/components/UserCard.vue'
 
 Always define props with types and validation:
 
-```js
-const props = defineProps({
-  status: {
-    type: String,
-    required: true,
-    validator: (value) => ['pending', 'active', 'done'].includes(value),
-  },
-})
+```ts
+type Status = 'pending' | 'active' | 'done'
+
+interface Props {
+  status: Status
+}
+
+const props = defineProps<Props>()
 ```
 
 ### Multi-Attribute Elements
@@ -232,15 +256,21 @@ Always use `:key` with `v-for`. Never combine `v-if` with `v-for` on the same el
 
 Extract reusable logic into composables in a `/composables` directory:
 
-```js
-// composables/useModal.js
+```ts
+// composables/useModal.ts
 import { ref } from 'vue'
 
 export function useModal() {
   const isOpen = ref(false)
-  const open = () => (isOpen.value = true)
-  const close = () => (isOpen.value = false)
-  const toggle = () => (isOpen.value = !isOpen.value)
+  const open = (): void => {
+    isOpen.value = true
+  }
+  const close = (): void => {
+    isOpen.value = false
+  }
+  const toggle = (): void => {
+    isOpen.value = !isOpen.value
+  }
   return { isOpen, open, close, toggle }
 }
 ```
@@ -248,7 +278,7 @@ export function useModal() {
 Usage in components:
 
 ```vue
-<script setup>
+<script setup lang="ts">
 import { useModal } from '@/composables/useModal'
 
 const { isOpen, open, close } = useModal()
